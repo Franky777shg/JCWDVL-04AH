@@ -1,0 +1,7 @@
+Buatlah sebuah code html dimana user akan memasukan angka dalam prompt untuk mengetahui musim dari bulan tersebut 
+lalu program akan menampilkan alert sedang musim apa dengan ketentuan bulan 1 sampai 3 musim dingin, 
+4 sampai 6 musim semi, 7 sampai 9 musim panas, 10 sampai 12 musim gugur.
+
+Contoh: User memasukan angka 1
+bulan ke 1 berarti sedang musim dingin (winter)
+bulan ke 5 berarti sedang musim semi (spring)

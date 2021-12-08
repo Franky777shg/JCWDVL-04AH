@@ -1,0 +1,18 @@
+<script>
+  alert("Gambe Penebak Angka 🎮");
+  let input = +prompt("Masukan angka dari 1 sampai 5:");
+  let random = Math.ceil(Math.random() * 5);
+
+  if (input < 1 || input > 5) {
+    
+    
+  } else if (input === random) {
+    alert(`COM: ${random}
+Player: ${input}
+Kamu Benar ✔`);
+  } else {
+    alert(`COM: ${random}
+Player: ${input}
+Kamu Salah ❌`);
+  }
+</script>

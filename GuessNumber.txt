@@ -1,0 +1,5 @@
+Buatlah sebuah code html yang berfungsi sebagai game penebak angka.
+Buatlah sebuah code untuk men generate acak angka 1 sampai 5.
+User lalu disuruh memasukan angka juga dari 1 sampai 5.
+Kalau angka yang dimasukan user sama dengan angka yang digenerate secara acak,
+maka tampilkan user benar, kalau salah tampilkan user salah.

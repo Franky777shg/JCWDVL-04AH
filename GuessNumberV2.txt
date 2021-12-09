@@ -3,3 +3,6 @@ Buatlah sebuah code untuk men generate acak angka 1 sampai 5.
 User lalu disuruh memasukan angka juga dari 1 sampai 5.
 Kalau angka yang dimasukan user sama dengan angka yang digenerate secara acak,
 maka tampilkan user benar, kalau salah tampilkan user salah.
+
+Lalu tanyakan ke user mau main lagi atau tidak (dengan method confirm), jika user klik ok maka user akan main lagi dari awal, 
+tapi kalau tidak hentikan looping nya.

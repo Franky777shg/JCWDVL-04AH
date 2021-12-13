@@ -1,20 +1,4 @@
-for (let i = 0; i < 3; i++) {
-  console.log(i);
-  for (let j = 0; j < 3; j++) {
-    console.log(j);
-  }
-}
-
-for (let i = 0; i < 3; i++) {
-  console.log(i);
-  for (let j = 0; j < 3; j++) {
-    console.log(j);
-  }
-}
-
-// modulus
-// 5 % 2
-// 5 - 2 = 3 - 2 = 1
-
-// 5 % 3
-// 5 - 3 = 2
+let arr = [4, 2, 1, 3];
+// join menggabungkan setiap item di sebuah array menjadi sebuah string
+// yang di masukan di dalam kurung buka kurung tutup adalah separator nya
+console.log(arr.join(""));

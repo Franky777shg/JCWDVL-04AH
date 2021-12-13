@@ -1,0 +1,11 @@
+1. Buatlah sebuah program html untuk menampung berbagai angka yang di input user (diinput satu per satu) 
+   sampai user merasa cukup
+2. Lalu dari deretan angka tersebut cari lah angka terbesar dan terkecil
+3. Alert deretan angka user beserta angka terbesar dan terkecil nya
+4. TIDAK BOLEH MEMAKAI METHOD SORT BAWAAN JAVASCRIPT
+
+Contoh:
+3, 2, 5, 1, 4
+Min = ?
+Max = ?
+

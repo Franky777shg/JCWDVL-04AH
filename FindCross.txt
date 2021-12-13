@@ -1,4 +1,0 @@
-Silvana phobia terhadap huruf x atau X dalam sebuah string, sehingga dia memutuskan untuk membuat sebuah algoritma.
-Bantulah Silvana membuat sebuah algoritma yang dapat menemukan huruf x atau X dalam sebuah string yang diberikan.
-Jika terdapat x atau X kurang dari sama dengan 10 buah, maka tampilkan kata "Safe!"
-jika lebih dari 10 buah, maka tampilkan kata "Danger!"

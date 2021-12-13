@@ -1,0 +1,6 @@
+1. Buatlah sebuah program untuk melihat item terbanyak dari sebuah array
+dan berapa kali item tersebut muncul.
+
+Contoh:
+[1, 3, "a", 4, "a"]
+Maka item terbanyak dalam array tersebut adalah string "a" sebanyak 2 kali

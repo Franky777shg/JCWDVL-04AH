@@ -1,5 +1,0 @@
-1. Buatlah sebuah file html yang dapat menerima inputan beberapa angka dari user
-2. Dari inputan tersebut berikanlah tanda dash "-" setiap ada angka ganjil yang berdampingan
-3. Tampilkan lewat alert
-Contoh:
-13245367124 => 1-3245-367-124

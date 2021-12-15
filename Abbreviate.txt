@@ -1,0 +1,8 @@
+Buatlah sebuah function yang akan mereturn singkatan dari sebuah string yang diberikan yang dipisahkan dengan titik (".") 
+dan huruf besar semua walaupun kata2nya tidak huruf besar.
+
+Contoh:
+Software Engineer => S.E
+Laughing Out Loud => L.O.L
+batu bata bogor => B.B.B
+Phantom Assassin => P.A

@@ -17,6 +17,8 @@ let show = (arrData) => {
 
     for (let prop in item) {
       tempResult[item[prop]] = prop;
+      // tempResult["apple"] = name
+      // tempResult.apple = name
     }
 
     return tempResult;

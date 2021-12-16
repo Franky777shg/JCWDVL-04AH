@@ -17,9 +17,9 @@
 
 // console.log(returnArray());
 
-// let obj = {};
+let obj = {};
 
-// obj.name = "apel"; // pemanggilan property di dalam obejct cara 1
+obj.name = "apel"; // pemanggilan property di dalam obejct cara 1
 
 // obj["name"]; // pemanggilan property di dalam obejct cara 2
 

@@ -1,7 +1,0 @@
-1. Buatlah sebuah function yang me return urutan sebuah kata berdasarkan huruf terakhirnya.
-2. Jika ada kata yang huruf terakhirnya sama, maka urutannya sama seperti sebelum di urutkan
-3. Masukan hasilnya ke dalam sebuah array
-
-Contoh:
-"you only live once" => ["live", "once", "you", "only"]
-"laughing out loud" => ["loud", "laughing", "out"]

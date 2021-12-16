@@ -1,0 +1,21 @@
+1. Buatlah sebuah function yang me nerima sebuah array of object
+2. Kemudian function tersebut akan me return sebuah string yang berisi tiap object yang ada di dalam array 
+   dengan properties beserta datanya (1 object 1 line)
+
+Contoh:
+[
+  {
+    title: "Bill Gates",
+    author: "The Road Ahead",
+    readingStatus: true,
+  },
+  {
+    title: "Steve Jobs",
+    author: "Walter Isaacson",
+    readingStatus: true,
+  }
+]
+
+result => 
+"title: Bill Gates, author: The Road Ahead, readingStatus: true
+title: Steve Jobs, author: Walter Isaacson, readingStatus: true"

@@ -1,4 +1,36 @@
-let arr = [4, 2, 1, 3];
-// join menggabungkan setiap item di sebuah array menjadi sebuah string
-// yang di masukan di dalam kurung buka kurung tutup adalah separator nya
-console.log(arr.join(""));
+// let returnArray = () => {
+//   return [
+//     {
+//       name: "apel",
+//       price: "standar",
+//     },
+//     {
+//       name: "apel",
+//       price: "standar",
+//     },
+//     {
+//       name: "apel",
+//       price: "standar",
+//     },
+//   ];
+// };
+
+// console.log(returnArray());
+
+// let obj = {};
+
+// obj.name = "apel"; // pemanggilan property di dalam obejct cara 1
+
+// obj["name"]; // pemanggilan property di dalam obejct cara 2
+
+// console.log(obj);
+
+let obj = {
+  name: "banana",
+  sugar: "low",
+  isExpensive: false,
+};
+
+for (let prop in obj) {
+  console.log(prop, obj[prop]);
+}

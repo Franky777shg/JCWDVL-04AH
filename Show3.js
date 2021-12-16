@@ -15,8 +15,8 @@ let show = (arrData) => {
   let result = arrData.map((item) => {
     let tempResult = {};
 
-    for (let ayam in item) {
-      tempResult[item[ayam]] = ayam;
+    for (let prop in item) {
+      tempResult[item[prop]] = prop;
     }
 
     return tempResult;

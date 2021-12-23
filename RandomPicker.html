@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: salmon;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <body>
+    <center>
+      <h1>Random Picker</h1>
+      <input type="text" id="input" placeholder="Insert Here.." />
+      <button onclick="onAdd()">Add To List</button>
+      <h2 id="result">Wait..</h2>
+      <button onclick="toggle('start')">Start Random</button>
+      <button onclick="toggle('stop')">Stop Random</button>
+      <!-- <button onclick="start()">Start Random</button>
+      <button onclick="stop()">Stop Random</button> -->
+      <br />
+      <br />
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody id="show-data"></tbody>
+      </table>
+    </center>
+  </body>
+  <script>
+    let data = [];
+    let running;
+
+    let onAdd = () => {
+      let newData = document.getElementById("input").value;
+      data.push(newData);
+      document.getElementById("input").value = "";
+      showData();
+    };
+
+    let showData = () => {
+      let tbody = document.getElementById("show-data");
+
+      let listData = data.map((item, index) => {
+        return `<tr>
+                    <td>${index + 1}</td>
+                    <td>${item}</td>
+                  </tr>`;
+      });
+
+      tbody.innerHTML = listData.join("");
+    };
+
+    let random = () => {
+      let h2Result = document.getElementById("result");
+      let resultRandom = data[Math.floor(Math.random() * data.length)];
+      h2Result.textContent = resultRandom;
+    };
+
+    // code dengan 1 function untuk start dan stop
+    let toggle = (operation) => {
+      switch (operation) {
+        case "start":
+          running = setInterval(random, 50);
+          break;
+        case "stop":
+          clearInterval(running);
+          break;
+        default:
+          break;
+      }
+    };
+
+    // code dengan dua function untuk start dan stop
+
+    // let start = () => {
+    //   running = setInterval(random, 50);
+    // };
+
+    // let stop = () => {
+    //   clearInterval(running);
+    // };
+  </script>
+</html>

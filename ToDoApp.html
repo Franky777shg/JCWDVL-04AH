@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #container {
+      background-color: lightseagreen;
+      width: 40vw;
+      height: 50vh;
+    }
+
+    ul li {
+      text-align: left;
+    }
+  </style>
+  <body>
+    <center>
+      <div id="container">
+        <h1>To Do App</h1>
+        <input type="text" id="input-user" />
+        <button onclick="onAdd()">ADD</button>
+        <ul id="list">
+          <!-- isinya nanti di render oleh sebuah function -->
+        </ul>
+      </div>
+    </center>
+  </body>
+  <script>
+    let database = ["makan", "minum", "tidur"];
+
+    let onAdd = () => {
+      let newTodo = document.getElementById("input-user").value;
+
+      database.push(newTodo);
+
+      document.getElementById("input-user").value = "";
+
+      onShow();
+    };
+
+    let onDelete = (index) => {
+      // pakai splice
+      database.splice(index, 1);
+
+      // pakai filter
+      // database = database.filter((value) => value !== item);
+
+      onShow();
+    };
+
+    let onEdit = (indexDataYangMauDihapus) => {
+      let editTodo = prompt("Edit Todo:");
+
+      if (editTodo === null) {
+        onShow();
+      } else {
+        database[indexDataYangMauDihapus] = editTodo;
+
+        onShow();
+      }
+    };
+
+    let onShow = () => {
+      let collectionsOfData = database.map((item, index) => {
+        return `<li>${item} <button onclick="onEdit(${index})">EDIT</button> <button onclick="onDelete(${index})">DELETE</button></li><br>`;
+      });
+
+      let list = document.getElementById("list");
+
+      list.innerHTML = collectionsOfData.join("");
+    };
+
+    onShow();
+  </script>
+</html>

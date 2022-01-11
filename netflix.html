@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("https://assets.nflxext.com/ffe/siteui/vlv3/c16cf196-e89e-4c46-8cc7-f2eca6fb0762/e824bc6d-ee47-44ff-af32-da3ec40c1d48/ID-en-20220103-popsignuptwoweeks-perspective_alpha_website_large.jpg")
+        no-repeat center;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    #container {
+      height: 100vh;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.9) 100%
+      );
+    }
+
+    #navigation {
+      /* background-color: yellow; */
+      height: 15vh;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 3%;
+      padding-right: 2%;
+    }
+    #title {
+      width: 15vw;
+      /* background-color: lightblue; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #signin {
+      width: 20vw;
+      /* background-color: salmon; */
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    #language {
+      width: 159px;
+      height: 36px;
+      border-radius: 5px;
+      background-color: transparent;
+      color: white;
+    }
+
+    #signin button {
+      width: 30%;
+      height: 35%;
+      background-color: red;
+      color: white;
+      border-radius: 5px;
+      border: none;
+    }
+    #title h1 {
+      font-size: 46px;
+      color: red;
+    }
+    #content {
+      /* background-color: seagreen; */
+      width: 50vw;
+      height: 60vh;
+      margin: auto;
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    #input-wrapper {
+      height: 70px;
+      width: 747px;
+      /* background-color: salmon; */
+      margin: auto;
+      display: flex;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="navigation">
+        <div id="title">
+          <h1>NETFLIX</h1>
+        </div>
+        <div id="signin">
+          <select id="language">
+            <option value="Indo">Bahasa Indonesia</option>
+            <option value="English" selected>English</option>
+          </select>
+          <button>Sign In</button>
+        </div>
+      </div>
+      <div id="content">
+        <h1 style="font-size: 64px; color: white; margin-bottom: 20px">
+          Unlimited movies, TV shows, and more.
+        </h1>
+        <h2 style="font-size: 26px; color: white; margin-bottom: 40px">
+          Watch anywhere. Cancel anytime.
+        </h2>
+        <h3 style="font-size: 20px; color: white; margin-bottom: 15px">
+          Ready to watch? Enter your email to create or restart your membership.
+        </h3>
+        <div id="input-wrapper">
+          <input
+            style="width: 500px; padding-left: 10px; border-radius: 5px"
+            type="text"
+            placeholder="Email Address"
+          />
+          <button
+            style="
+              width: 247px;
+              background-color: red;
+              color: white;
+              font-size: 30px;
+              border: none;
+              border-radius: 5px;
+            "
+          >
+            Get Started >
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

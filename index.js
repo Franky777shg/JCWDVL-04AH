@@ -1,5 +1,6 @@
 const http = require("http");
 const fs = require("fs");
+const url = require("url");
 const PORT = 2000;
 
 let database = [
@@ -21,6 +22,8 @@ let database = [
 ];
 
 const server = http.createServer((req, res) => {
+  let alamatURL = url.parse(req.url);
+
   if (req.url === "/") {
     let home = fs.readFileSync("home.html");
     res.writeHead(200, { "Content-Type": "text/html" });
@@ -68,6 +71,31 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { "Content-Type": "application/json" });
 
       // kita tampilkan database yang telah di push data terbaru
+      res.end(JSON.stringify(database));
+    });
+  } else if (alamatURL.pathname === "/edit") {
+    // console.log(alamatURL);
+    let idEdit = +alamatURL.query;
+    let input = "";
+    req.on("data", (chunk) => {
+      input = chunk.toString();
+    });
+    req.on("end", () => {
+      let objBody = JSON.parse(input);
+
+      let userEdit = database[idEdit];
+
+      for (let key in objBody) {
+        for (let key2 in userEdit) {
+          if (key === key2) {
+            userEdit[key2] = objBody[key];
+          }
+        }
+      }
+
+      database.splice(idEdit, 1, userEdit);
+
+      res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify(database));
     });
   }

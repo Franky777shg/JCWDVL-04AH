@@ -1,3 +1,5 @@
+const { validationResult } = require("express-validator");
+
 let users = [
   {
     id: 1,
@@ -29,6 +31,12 @@ module.exports = {
     res.status(200).send(users[index]);
   },
   register: (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      let errorMsgOnly = errors.errors.map((item) => item.msg);
+      return res.status(400).send(errorMsgOnly);
+    }
+
     let checkUser = users.filter(
       (item) =>
         item.username === req.body.username || item.email === req.body.email

@@ -1,55 +1,73 @@
-let products = [
-  {
-    id: 1,
-    name: "banana",
-    price: 2000,
-  },
-  {
-    id: 2,
-    name: "orange",
-    price: 3000,
-  },
-  {
-    id: 59,
-    name: "melon",
-    price: 4000,
-  },
-];
+const { db } = require("../database");
+const { generateQueryEdit } = require("../helpers/generateQuery");
 
 module.exports = {
   getAllProducts: (req, res) => {
-    try {
-      res.status(200).send(products);
-    } catch (err) {
-      res.status(400).send(err);
-    }
+    let getQuery = `select * from products`;
+    db.query(getQuery, (err, result) => {
+      if (err) return res.status(400).send(err);
+      res.status(200).send(result);
+    });
   },
   getProductById: (req, res) => {
-    try {
-      let id = +req.params.id;
-      let result = products.filter((item) => item.id === id);
-      res.status(200).send(result[0]);
-    } catch (err) {
-      res.status(400).send(err);
-    }
+    let id = +req.params.id;
+
+    let getQuery = `select * from products where id = ${id}`;
+    db.query(getQuery, (err, result) => {
+      if (err) return res.status(400).send(err);
+      res.status(200).send(result);
+    });
   },
   addProduct: (req, res) => {
-    try {
-      req.body.id = products[products.length - 1].id + 1;
-      products.push(req.body);
-      res.status(200).send(products);
-    } catch (err) {
-      res.status(400).send(err);
-    }
+    let { name, price, category } = req.body;
+
+    let addQuery = `insert into products(name, price, category) values(${db.escape(
+      name
+    )}, ${db.escape(price)}, ${db.escape(category)})`;
+
+    db.query(addQuery, (err, result) => {
+      if (err) return res.status(400).send(err);
+
+      let getQuery = `select * from products`;
+
+      db.query(getQuery, (err2, result2) => {
+        if (err2) return res.status(400).send(err2);
+        res.status(200).send(result2);
+      });
+    });
   },
   deleteProduct: (req, res) => {
-    try {
-      let id = +req.params.id;
-      let index = products.findIndex((item) => item.id === id);
-      products.splice(index, 1);
-      res.status(200).send(products);
-    } catch (err) {
-      res.status(400).send(err);
-    }
+    let id = +req.params.id;
+
+    let deleteQuery = `delete from products where id = ${id}`;
+
+    db.query(deleteQuery, (err, result) => {
+      if (err) return res.status(400).send(err);
+
+      let getQuery = `select * from products`;
+
+      db.query(getQuery, (err2, result2) => {
+        if (err2) return res.status(400).send(err2);
+        res.status(200).send(result2);
+      });
+    });
+  },
+  editProduct: (req, res) => {
+    let id = +req.params.id;
+
+    let editQuery = `update products set ${generateQueryEdit(
+      req.body
+    )} where id = ${id}`;
+
+    db.query(editQuery, (err, result) => {
+      if (err) return res.status(400).send(err);
+
+      let getQuery = `select * from products`;
+
+      db.query(getQuery, (err2, result2) => {
+        if (err2) return res.status(400).send(err2);
+        res.status(200).send(result2);
+      });
+    });
   },
 };

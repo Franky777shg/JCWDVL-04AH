@@ -8,6 +8,7 @@ const App = () => {
   const [newData, setNewData] = useState({});
   const [selectedID, setSelectedID] = useState(0);
   const [editData, setEditData] = useState({});
+  const [tes, setTes] = useState("Ada Nih");
 
   const inputHandlerAdd = (e) => {
     const name = e.target.name;
@@ -80,6 +81,12 @@ const App = () => {
       });
   };
 
+  const onTes = () => {
+    // kalau kita melakukan setState datanya tidak ada, maka dia akan merubah state tersebut
+    // menjadi undefined
+    setTes();
+  };
+
   const tableHead = () => {
     return (
       <thead>
@@ -104,7 +111,7 @@ const App = () => {
         {data.map((item) => {
           if (item.id === selectedID) {
             return (
-              <tr>
+              <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>
                   <Form.Control
@@ -153,7 +160,7 @@ const App = () => {
             );
           }
           return (
-            <tr>
+            <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.price}</td>
@@ -221,7 +228,7 @@ const App = () => {
     );
   };
 
-  console.log(data);
+  console.log(tes);
   return (
     <div>
       <h1 style={{ textAlign: "center", margin: "5% 0 2% 0" }}>Table Data</h1>
@@ -236,6 +243,7 @@ const App = () => {
         {tableBody()}
         {tableInput()}
       </Table>
+      <Button onClick={onTes}>Testing setState Kosong</Button>
     </div>
   );
 };
